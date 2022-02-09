@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Display } from "./components/QuestionDisplay";
 import { Choices } from "./components/AnswerChoice";
@@ -45,7 +45,7 @@ export default function App() {
       <div>
         <Choices
         correctanswer={answer[0]}
-        incorrectanswers={wrongAnswers[0]}
+        incorrectanswers={wrongAnswers}
          />
       </div>
     </div>
