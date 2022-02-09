@@ -1,23 +1,27 @@
 import react, { useEffect, useState } from "react";
 import axios from "axios";
-import { CategoryInfo } from "./CategoryData";
 import { Display } from "./components/QuestionDisplay";
 import { Choices } from "./components/AnswerChoice";
+import "../src/question.css"
 
 export default function App() {
-  const [categories, setCategories] = useState(CategoryInfo);
+  const [categories, setCategories] = useState([]);
+  const [questions, setQuestions] = useState([]);
+  const [answer, setAnswer] = useState([]);
+  const [wrongAnswers, setWrongAnswers] = useState([]);
 
   useEffect(() => {
-    console.log("works");
     axios
-      .get("https://opentdb.com/api.php?amount=10&category=9")
+      .get("https://opentdb.com/api.php?amount=10&category=9&type=multiple")
       .then((response) => {
         const results = response.data.results;
         console.log(results);
-        for (let result of results) {
-          console.log(result.category);
-        }
         setCategories(results.map((resultsObj) => resultsObj.category));
+        setQuestions(results.map((resultsObj) => resultsObj.question));
+        setAnswer(results.map((resultsObj) => resultsObj.correct_answer));
+        setWrongAnswers(results.map((resultsObj) => resultsObj.incorrect_answers));
+        console.log(categories)
+
       });
   }, []);
   console.log(categories);
@@ -33,10 +37,16 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display />
+        <Display
+          question={questions[0]}
+        />
       </div>
+        
       <div>
-        <Choices />
+        <Choices
+        correctanswer={answer[0]}
+        incorrectanswers={wrongAnswers[0]}
+         />
       </div>
     </div>
   );
