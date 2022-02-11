@@ -5,7 +5,7 @@ import { Choices } from "./components/AnswerChoice";
 import "../src/question.css"
 
 export default function App() {
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
   const [questions, setQuestions] = useState([]);
   const [answer, setAnswer] = useState([]);
   const [wrongAnswers, setWrongAnswers] = useState([]);
@@ -16,15 +16,14 @@ export default function App() {
       .then((response) => {
         const results = response.data.results;
         console.log(results);
-        setCategories(results.map((resultsObj) => resultsObj.category));
+        // setCategories(results.map((resultsObj) => resultsObj.category));
         setQuestions(results.map((resultsObj) => resultsObj.question));
         setAnswer(results.map((resultsObj) => resultsObj.correct_answer));
-        setWrongAnswers(results.map((resultsObj) => resultsObj.incorrect_answers));
-        console.log(categories)
+        setWrongAnswers(response.data.results[0].incorrect_answers);
+        console.log("works")
 
       });
   }, []);
-  console.log(categories);
 
   return (
     <div>
