@@ -25,7 +25,8 @@ export default function App() {
       });
   }, []);
 
-  return (
+
+return (
     <div>
       <div className="container">
         <header className="questionHead">
