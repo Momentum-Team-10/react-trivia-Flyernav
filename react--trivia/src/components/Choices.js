@@ -1,18 +1,22 @@
 import React from "react";
-// import { useState } from 'react'
+// import { useState } from "react";
 // import { useEffect } from 'react';
 // import axios from 'axios';
-import App from "../App";
 
-export const Choices = ({ correctanswer, incorrectanswers }) => {
+export const Choices = ({
+  correctanswer,
+  incorrectanswers,
+  scoreHandler,
+  scoreHandlerWrong,
+}) => {
   console.log(correctanswer);
   const handleAnswerButtonClick = (event) => {
     console.log(event);
     if (correctanswer === event.target.value) {
-      return alert("this answer is correct");
-    }
-
-    alert("this answer is incorrect");
+      alert("this answer is correct");
+      scoreHandler();
+    } else alert("this answer is incorrect");
+    scoreHandlerWrong();
   };
 
   return (
