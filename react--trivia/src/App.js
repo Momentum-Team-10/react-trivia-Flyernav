@@ -29,10 +29,6 @@ export default function App() {
     setScore(score + 1);
   };
 
-  const scoreClickWrong = () => {
-    setScore(score - 1);
-  };
-
   return (
     <div>
       <div className="container">
@@ -52,7 +48,6 @@ export default function App() {
           correctanswer={answer[0]}
           incorrectanswers={wrongAnswers}
           scoreHandler={scoreClick}
-          scoreHandlerWrong={scoreClickWrong}
         />
       </div>
       <div className="score">Score: {score}</div>

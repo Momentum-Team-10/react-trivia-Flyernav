@@ -3,12 +3,7 @@ import React from "react";
 // import { useEffect } from 'react';
 // import axios from 'axios';
 
-export const Choices = ({
-  correctanswer,
-  incorrectanswers,
-  scoreHandler,
-  scoreHandlerWrong,
-}) => {
+export const Choices = ({ correctanswer, incorrectanswers, scoreHandler }) => {
   console.log(correctanswer);
   const handleAnswerButtonClick = (event) => {
     console.log(event);
@@ -16,7 +11,6 @@ export const Choices = ({
       alert("this answer is correct");
       scoreHandler();
     } else alert("this answer is incorrect");
-    scoreHandlerWrong();
   };
 
   return (
