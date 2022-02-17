@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
 
 export const Choices = ({
   correctanswer,
@@ -17,25 +17,26 @@ export const Choices = ({
 
     questionNumberHandler();
   };
-
+  console.log(incorrectanswers);
   return (
     <div className="container2">
       <div className="answerBox">
-        <Button
+        <button
           variant="contained"
           value={correctanswer}
           onClick={(event) => handleAnswerButtonClick(event)}
         >
           {correctanswer}
-        </Button>
+        </button>
+
         {incorrectanswers.map((incorrectanswer) => (
-          <Button
+          <button
             variant="contained"
             value={incorrectanswer}
             onClick={(event) => handleAnswerButtonClick(event)}
           >
             {incorrectanswer}
-          </Button>
+          </button>
         ))}
       </div>
     </div>
