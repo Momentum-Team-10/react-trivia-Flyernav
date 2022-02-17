@@ -6,23 +6,26 @@ import "../src/question.css";
 
 export default function App() {
   // const [categories, setCategories] = useState([]);
-  const [questions, setQuestions] = useState([]);
-  const [answer, setAnswer] = useState([]);
-  const [wrongAnswers, setWrongAnswers] = useState([]);
+  // const [results.question[1], setQuestions] = useState([]);
+  // const [answer, setAnswer] = useState([]);
+  // const [wrongAnswers, setWrongAnswers] = useState([]);
   const [score, setScore] = useState(0);
   const [questionNumber, setQuestionNumber] = useState(0);
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://opentdb.com/api.php?amount=10&category=9&type=multiple")
       .then((response) => {
-        const results = response.data.results;
+        setResults(response.data.results);
         console.log(results);
         // setCategories(results.map((resultsObj) => resultsObj.category));
-        setQuestions(results.map((resultsObj) => resultsObj.question));
-        setAnswer(results.map((resultsObj) => resultsObj.correct_answer));
-        setWrongAnswers(response.data.results[0].incorrect_answers);
-        console.log(response.data.results);
+        // setQuestions(results.map((resultsObj) => resultsObj.question));
+        // setAnswer(results.map((resultsObj) => resultsObj.correct_answer));
+        // setWrongAnswers(
+        //   results.map((resultsObj) => resultsObj.incorrect_answers)
+        // );
+        // console.log(response.data.results);
       });
   }, []);
 
@@ -45,13 +48,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[0]} />
+        <Display question={results[0].question} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[0]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[0]}
+          incorrectanswers={results.incorrect_answers[0]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
@@ -69,13 +72,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[1]} />
+        <Display question={results.question[1]} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[1]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[1]}
+          incorrectanswers={results.incorrect_answers[1]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
@@ -93,13 +96,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[2]} />
+        <Display question={results.question[2]} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[2]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[2]}
+          incorrectanswers={results.incorrect_answers[2]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
@@ -117,13 +120,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[3]} />
+        <Display question={results.question[3]} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[3]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[3]}
+          incorrectanswers={results.incorrect_answers[3]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
@@ -141,13 +144,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[4]} />
+        <Display question={results.question[4]} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[4]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[4]}
+          incorrectanswers={results.incorrect_answers[4]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
@@ -165,13 +168,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[5]} />
+        <Display question={results.question[5]} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[5]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[5]}
+          incorrectanswers={results.incorrect_answers[5]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
@@ -189,13 +192,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[6]} />
+        <Display question={results.question[6]} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[6]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[6]}
+          incorrectanswers={results.incorrect_answers[6]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
@@ -213,13 +216,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[7]} />
+        <Display question={results.question[7]} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[7]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[7]}
+          incorrectanswers={results.incorrect_answers[7]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
@@ -237,13 +240,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[8]} />
+        <Display question={results.question[8]} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[8]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[8]}
+          incorrectanswers={results.incorrect_answers[8]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
@@ -261,13 +264,13 @@ export default function App() {
         <h4>Test your knowledge of different Subjects</h4>
       </div>
       <div>
-        <Display question={questions[9]} />
+        <Display question={results.question[9]} />
       </div>
 
       <div>
         <Choices
-          correctanswer={answer[9]}
-          incorrectanswers={wrongAnswers}
+          correctanswer={results.correct_answer[9]}
+          incorrectanswers={results.incorrect_answers[9]}
           scoreHandler={scoreClick}
           questionNumberHandler={numberClick}
         />
