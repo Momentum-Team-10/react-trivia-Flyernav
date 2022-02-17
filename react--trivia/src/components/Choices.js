@@ -1,9 +1,12 @@
 import React from "react";
-// import { useState } from "react";
-// import { useEffect } from 'react';
-// import axios from 'axios';
+import { Button } from "@material-ui/core";
 
-export const Choices = ({ correctanswer, incorrectanswers, scoreHandler }) => {
+export const Choices = ({
+  correctanswer,
+  incorrectanswers,
+  scoreHandler,
+  questionNumberHandler,
+}) => {
   console.log(correctanswer);
   const handleAnswerButtonClick = (event) => {
     console.log(event);
@@ -11,24 +14,28 @@ export const Choices = ({ correctanswer, incorrectanswers, scoreHandler }) => {
       alert("this answer is correct");
       scoreHandler();
     } else alert("this answer is incorrect");
+
+    questionNumberHandler();
   };
 
   return (
     <div className="container2">
       <div className="answerBox">
-        <button
+        <Button
+          variant="contained"
           value={correctanswer}
           onClick={(event) => handleAnswerButtonClick(event)}
         >
           {correctanswer}
-        </button>
+        </Button>
         {incorrectanswers.map((incorrectanswer) => (
-          <button
+          <Button
+            variant="contained"
             value={incorrectanswer}
             onClick={(event) => handleAnswerButtonClick(event)}
           >
             {incorrectanswer}
-          </button>
+          </Button>
         ))}
       </div>
     </div>
