@@ -18,24 +18,34 @@ export const Choices = ({
     questionNumberHandler();
   };
   console.log(incorrectanswers);
+
+  const shuffleArray = (array) => {
+    let currentIndex = array.length,
+      randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  };
+
   return (
     <div className="container2">
       <div className="answerBox">
-        <button
-          variant="contained"
-          value={correctanswer}
-          onClick={(event) => handleAnswerButtonClick(event)}
-        >
-          {correctanswer}
-        </button>
-
-        {incorrectanswers.map((incorrectanswer) => (
+        {shuffleArray(incorrectanswers.concat(correctanswer)).map((answer) => (
           <button
             variant="contained"
-            value={incorrectanswer}
+            value={answer}
             onClick={(event) => handleAnswerButtonClick(event)}
           >
-            {incorrectanswer}
+            {answer}
           </button>
         ))}
       </div>
