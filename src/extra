@@ -238,3 +238,37 @@
   //     <div className="score">Score: {score}</div>
   //   </div>
   // );
+
+
+
+
+
+
+
+
+
+
+
+Choices.js button selection
+
+  // <div className="container2">
+    //   <div className="answerBox">
+    //     <button
+    //       variant="contained"
+    //       value={correctanswer}
+    //       onClick={(event) => handleAnswerButtonClick(event)}
+    //     >
+    //       {correctanswer}
+    //     </button>
+
+    //     {incorrectanswers.map((incorrectanswer) => (
+    //       <button
+    //         variant="contained"
+    //         value={incorrectanswer}
+    //         onClick={(event) => handleAnswerButtonClick(event)}
+    //       >
+    //         {incorrectanswer}
+    //       </button>
+    //     ))}
+    //   </div>
+    // </div>
