@@ -43,21 +43,15 @@ export default function App() {
 
   return wrongAnswers.length > 0 ? (
     <>
-      {score === 8 && <YouWin />}
-      {score < 8 && (
-        <div>
-          <div className="container">
-            <header className="questionHead">
-              <h1>Wanna Question?</h1>
-            </header>
-          </div>
-          <div>
-            <h4>Test your knowledge of different Subjects</h4>
-          </div>
+      {score === 1 && <YouWin />}
+      {score < 1 && (
+        <div className="questionBox">
+          <div className="container"></div>
+
           <Display question={decode(questions[questionNumber])} />
           <Choices
             correctanswer={answer[questionNumber]}
-            incorrectanswers={wrongAnswers[questionNumber]}
+            incorrectanswers={decode(wrongAnswers[questionNumber])}
             scoreHandler={scoreClick}
             questionNumberHandler={numberClick}
           />

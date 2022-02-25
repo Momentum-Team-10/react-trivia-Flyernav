@@ -1,13 +1,157 @@
 * {
   margin: 0;
   padding: 0;
+  /* background-color: #484487; */
 }
-/* body {
-  background-color: #4c4caa;
-  color: #d36301;
-  justify-content: center;
-} */
+body {
+  background-color: #484487;
+}
 
-.title {
+.score {
+  background-color: #d36301;
+  width: 80px;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.questionBox {
+  width: 80%;
+}
+
+.screen {
+  margin: 50px;
+  padding: 100px;
   background-color: white;
+  border: solid 5px #d36301;
+  border-radius: 50px;
+  font-family: "Varela Round", sans-serif;
+  color: #d36301;
+  font-size: x-large;
+}
+
+.Btn {
+  display: inline-block;
+  padding: 0.35em 3.2em;
+  border: 0.1em solid #d36301;
+  margin: 0px -1.7em 3.3em 65px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: large;
+  color: #d36301;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: #ffffff;
+}
+
+.Btn:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  background: linear-gradient(
+    60deg,
+    rgb(72, 68, 135, 1) 50%,
+    rgb(204, 222, 224) 100%
+  );
+  color: #d36301;
+}
+.logo {
+  width: 50px;
+  fill: white;
+  padding-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  height: 22vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: x-large;
+}
+
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+  /* border-bottom: solid 5px #d36301; */
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: #484487;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 30px;
+    font-family: "Oswald", sans-serif;
+  }
+}
+
+.Win {
+  justify-content: center;
+  color: #ffffff;
+  padding-left: 40%;
+  padding-top: 20%;
 }

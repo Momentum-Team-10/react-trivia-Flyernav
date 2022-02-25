@@ -7,10 +7,10 @@ export const YouWin = () => {
 
   return (
     <>
-      <div>
+      <div className="Win">
         <h1>Congrats You Win</h1>
       </div>
-      <Confetti width={2000} height={2000} />
+      <Confetti width={1300} height={2000} />
     </>
   );
 };

@@ -41,6 +41,7 @@ export const Choices = ({
       <div className="answerBox">
         {shuffleArray(incorrectanswers.concat(correctanswer)).map((answer) => (
           <button
+            className="Btn"
             variant="contained"
             value={answer}
             onClick={(event) => handleAnswerButtonClick(event)}
