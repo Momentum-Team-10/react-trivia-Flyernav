@@ -8,7 +8,7 @@ export const YouWin = () => {
   return (
     <>
       <div className="Win">
-        <h1>Congrats You Win</h1>
+        <h1 className="congrats">Congrats You Win</h1>
       </div>
       <Confetti width={1300} height={2000} />
     </>
