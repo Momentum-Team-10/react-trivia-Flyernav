@@ -10,7 +10,7 @@ export const YouWin = () => {
       <div className="Win">
         <h1 className="congrats">Congrats You Win</h1>
       </div>
-      <Confetti width={1300} height={2000} />
+      <Confetti width={1250} height={2000} />
     </>
   );
 };

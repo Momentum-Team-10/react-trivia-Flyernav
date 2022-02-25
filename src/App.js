@@ -43,8 +43,8 @@ export default function App() {
 
   return wrongAnswers.length > 0 ? (
     <>
-      {score === 1 && <YouWin />}
-      {score < 1 && (
+      {score === 6 && <YouWin />}
+      {score < 6 && (
         <div className="questionBox">
           <div className="container"></div>
 
